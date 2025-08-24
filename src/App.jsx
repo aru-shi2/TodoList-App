@@ -14,7 +14,7 @@ function App() {
           </h1>
           <div className="write flex gap-3">
             <input
-              className="bg-gray-700 w-[85%] h-8 ml-11 rounded-xl placeholder-gray-400 p-5"
+              className="bg-gray-700 w-[85%] h-8 ml-10 rounded-xl placeholder-gray-400 p-5"
               type="text"
               placeholder="Add a new todo.."
             />
