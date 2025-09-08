@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "./Components/Navbar";
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -10,8 +11,11 @@ const handleEdit = () => {
    
   };
 
-const handleDelete = () => {
-   
+const handleDelete = (e,id) => {
+   let newTodos=todos.filter(item=>{
+    return item.id!==id
+   })
+   settodos(newTodos)
   };
 
 const handleChange = (e) => {
@@ -20,10 +24,20 @@ const handleChange = (e) => {
 
   
 const handleAdd = () => {
-   settodos([...todos, {Todo, isCompleted: false}])
+   settodos([...todos, {id: uuidv4(), Todo, isCompleted: false}])
    setTodo("")
   };  
  
+const handleCheckbox=(e) => {
+  let id=e.target.name
+ let index=todos.findIndex(item=>{
+  return item.id===id;
+ })
+ let newTodos=[...todos]
+ newTodos[index].isCompleted=!newTodos[index].isCompleted;
+ settodos(newTodos)
+}
+  
 
   return (
     <>
@@ -53,11 +67,13 @@ const handleAdd = () => {
             <div className="todo gap-4">
               {todos.map(item=>{
                 
-              return  <div className="todoss flex w-[98%] justify-between">
-                  <div className="todoo text-xl flex">
-                    {/* <input type="checkbox" id="completed" value={Todo.isCompleted}/> */}
+              return  <div key={item.id} className="todoss flex w-[98%] justify-between">
+                <div className="right flex gap-2 text-xl items-center">
+                  <input name={item.id} onChange={handleCheckbox} type="checkbox" value={item.isCompleted} id="" />
+                  <div className = {item.isCompleted?"line-through":""}>
                {item.Todo}
               </div>
+                </div>
               <div className="btns space-x-3 mb-4">
                 <button
                   onClick={handleEdit}
@@ -66,7 +82,7 @@ const handleAdd = () => {
                   Edit
                 </button>
                 <button
-                  onClick={handleDelete}
+                  onClick={(e)=>{handleDelete(item.id)}}
                   className="bg-purple-900 px-3 rounded h-7 text-gray-300"
                 >
                   Delete
