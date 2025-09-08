@@ -7,8 +7,23 @@ function App() {
   const [Todo, setTodo] = useState("")
   const [todos, settodos] = useState([])
 
-const handleEdit = () => {
-   
+  const saveToLS=(params) => {
+    localStorage.setItem("todos",JSON.stringify(todos))
+  }
+  
+  useEffect(() => {
+    let todos=
+  }, [third])
+  
+
+const handleEdit = (e,id) => {
+  let t=todos.filter(i=>i.id===id) 
+  setTodo(t[0].Todo)
+  let newTodos=todos.filter(item=>{
+    return item.id!==id
+   })
+   settodos(newTodos)
+   saveToLS()
   };
 
 const handleDelete = (e,id) => {
@@ -16,6 +31,8 @@ const handleDelete = (e,id) => {
     return item.id!==id
    })
    settodos(newTodos)
+   window.confirm("are you sure you want to delete this todo")
+    saveToLS()
   };
 
 const handleChange = (e) => {
@@ -26,6 +43,7 @@ const handleChange = (e) => {
 const handleAdd = () => {
    settodos([...todos, {id: uuidv4(), Todo, isCompleted: false}])
    setTodo("")
+    saveToLS()
   };  
  
 const handleCheckbox=(e) => {
@@ -36,6 +54,7 @@ const handleCheckbox=(e) => {
  let newTodos=[...todos]
  newTodos[index].isCompleted=!newTodos[index].isCompleted;
  settodos(newTodos)
+  saveToLS()
 }
   
 
@@ -65,6 +84,7 @@ const handleCheckbox=(e) => {
           <div className="todos ml-9 flex flex-col gap-3">
             <h1 className="font-bold text-2xl">Your todos</h1>
             <div className="todo gap-4">
+              {todos.length===0 && <div className="m-5 text-base font-thin">No Todos to display</div>}
               {todos.map(item=>{
                 
               return  <div key={item.id} className="todoss flex w-[98%] justify-between">
@@ -76,13 +96,13 @@ const handleCheckbox=(e) => {
                 </div>
               <div className="btns space-x-3 mb-4">
                 <button
-                  onClick={handleEdit}
+                  onClick={(e)=>{handleEdit(e,item.id)}}
                   className="bg-purple-900 px-4 rounded h-7 text-gray-300"           
                 >
                   Edit
                 </button>
                 <button
-                  onClick={(e)=>{handleDelete(item.id)}}
+                  onClick={(e)=>{handleDelete(e,item.id)}}
                   className="bg-purple-900 px-3 rounded h-7 text-gray-300"
                 >
                   Delete
