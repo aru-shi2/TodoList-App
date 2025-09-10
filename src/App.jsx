@@ -23,8 +23,8 @@ function App() {
     }
   }, [todos])
   
-  const toggleFinished=(params) => {
-    
+  const toggleFinished=(e) => {
+    setshowFinished(!showFinished)
   }
   
 
@@ -63,7 +63,7 @@ function App() {
     settodos(newTodos);
   };
 
-  return (
+  return  ( 
     <>
       <div className="bg1 h-screen overflow-hidden pacifico-regular">
         <Navbar />
@@ -81,13 +81,14 @@ function App() {
             />
             <button
               onClick={handleAdd}
-              className="bg-purple-900 px-4 rounded-xl text-white"
+              disabled={Todo.length<=3}
+              className="bg-purple-900 disabled:bg-purple-700 px-4 rounded-xl text-white"
             >
               Add
             </button>
           </div>
           <div className="show ml-10 pb-2 border-b-1 flex gap-3">
-            <input type="checkbox" id="show" checked={showFinished} />
+            <input type="checkbox" id="show" onChange={toggleFinished} checked={showFinished} />
             <label htmlFor="show">Show Finished</label>
           </div>
           <div className="todos ml-9 flex flex-col gap-3">
@@ -99,8 +100,8 @@ function App() {
                 </div>
               )}
               {todos.map((item) => {
-                return (
-                  <div
+                return  (
+                 (showFinished || !item.isCompleted) && <div
                     key={item.id}
                     className="todoss flex w-[98%] justify-between"
                   >
