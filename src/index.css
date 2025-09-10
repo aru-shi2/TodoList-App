@@ -2,7 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 .bg1{
+background-color: #4e3e64;
+}
+
+.bg2{
 background: linear-gradient(45deg, rgba(187, 197, 184, 1.000) 0.000%, rgba(164, 146, 180, 1.000) 25.000%, rgba(135, 101, 166, 1.000) 50.000%, rgba(103, 80, 145, 1.000) 75.000%, rgba(75, 91, 116, 1.000) 100.000%)
+}
+
+.bgnav{
+background-color: rgb(57, 36, 77);
 }
 
 .pacifico-regular {
@@ -10,7 +18,3 @@ background: linear-gradient(45deg, rgba(187, 197, 184, 1.000) 0.000%, rgba(164, 
   font-weight: 400;
   font-style: normal;
 }
-
-
-
-
