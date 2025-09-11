@@ -30,7 +30,7 @@ function App() {
 
   const handleEdit = (e, id) => {
     let t = todos.filter((i) => i.id === id);
-    setTodo(t.Todo);
+    setTodo(t[0].Todo);
     let newTodos = todos.filter((item) => {
       return item.id !== id;
     });
@@ -65,7 +65,7 @@ function App() {
 
   return (
     <>
-      <div className="bg1 h-screen overflow-hidden pacifico-regular">
+      <div className="bg1 h-screen overflow-hidden">
         <Navbar />
         <div className="container space-y-6 mx-auto w-[67%] bg2 h-screen ">
           <h1 className="flex justify-center items-center text-5xl pt-9 font-bold text-white">
@@ -87,7 +87,7 @@ function App() {
               Add
             </button>
           </div>
-          <div className="show ml-13 flex gap-3">
+          <div className="show ml-13 flex gap-3 font-xl">
             <input
               type="checkbox"
               id="show"
