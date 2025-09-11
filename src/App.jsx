@@ -67,7 +67,7 @@ function App() {
     <>
       <div className="bg1 h-screen overflow-hidden">
         <Navbar />
-        <div className="container space-y-6 mx-auto w-[67%] bg2 h-screen ">
+        <div className="container space-y-6 mx-auto w-[90%] md:w-[67%] bg2 h-screen ">
           <h1 className="flex justify-center items-center text-5xl pt-9 font-bold text-white">
             Todo List
           </h1>
