@@ -67,7 +67,7 @@ function App() {
     <>
       <div className="bg1 h-screen overflow-hidden">
         <Navbar />
-        <div className="container space-y-6 mx-auto w-[90%] md:w-[67%] bg2 h-screen ">
+        <div className="container space-y-6 mx-auto w-[98%] md:w-[67%] bg2 h-screen ">
           <h1 className="flex justify-center items-center text-5xl pt-9 font-bold text-white">
             Todo List
           </h1>
@@ -129,7 +129,7 @@ function App() {
                           onClick={(e) => {
                             handleEdit(e, item.id);
                           }}
-                          className="bg-purple-900 cursor-pointer px-4 rounded md:h-7 h-6 text-gray-300 transition-all ease-in-out duration-500 hover:scale-90"
+                          className="bg-purple-900 cursor-pointer px-4 rounded md:h-7 h-8 text-gray-300 transition-all ease-in-out duration-500 hover:scale-90"
                         >
                           <FiEdit />
                         </button>
@@ -137,7 +137,7 @@ function App() {
                           onClick={(e) => {
                             handleDelete(e, item.id);
                           }}
-                          className="bg-purple-900 cursor-pointer px-4 rounded md:h-7 h-6 text-gray-300 transition-all ease-in-out duration-500 hover:scale-90 hover:bg-red-500"
+                          className="bg-purple-900 cursor-pointer px-4 rounded md:h-7 h-8 text-gray-300 transition-all ease-in-out duration-500 hover:scale-90 hover:bg-red-500"
                         >
                           <MdDelete />
                         </button>
