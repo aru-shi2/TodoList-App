@@ -71,18 +71,18 @@ function App() {
           <h1 className="flex justify-center items-center text-5xl pt-9 font-bold text-white">
             Todo List
           </h1>
-          <div className="write flex gap-3">
+          <div className="write flex flex-col md:flex-row md:justify-center items-center gap-3">
             <input
               onChange={handleChange}
               value={Todo}
-              className="bg-gray-700 w-[81%] h-10 ml-12 rounded-xl placeholder-gray-400 p-5 flex"
+              className="bg-gray-700 w-[81%] h-10 rounded-xl placeholder-gray-400 p-5 flex"
               type="text"
               placeholder="Add a new todo.."
             />
             <button
               onClick={handleAdd}
               disabled={Todo.length <= 3}
-              className="bg-purple-900 disabled:opacity-50 px-4 rounded-xl text-white"
+              className="bg-purple-900 disabled:opacity-50 w-[81%] rounded-xl text-white md:px-4 md:w-fit md:h-9 transition-all ease-in-out duration-500 hover:scale-90"
             >
               Add
             </button>
@@ -96,8 +96,8 @@ function App() {
             />
             <label htmlFor="show">Show Finished</label>
           </div>
-          <div className="border-1 w-6/7 ml-15 opacity-40"></div>
-          <div className="todos ml-14 flex flex-col gap-3">
+          <div className="border-1 w-4/5 md:w-6/7 md:ml-15 ml-12 opacity-40"></div>
+          <div className="todos gap-3 flex flex-col   ml-14">
             <h1 className="font-bold text-2xl">Your todos</h1>
             <div className="todo gap-4">
               {todos.length === 0 && (
@@ -110,9 +110,9 @@ function App() {
                   (showFinished || !item.isCompleted) && (
                     <div
                       key={item.id}
-                      className="todoss flex w-[94%] justify-between"
+                      className="todoss flex w-[90%] justify-between"
                     >
-                      <div className="right flex gap-2 text-xl items-center">
+                      <div className="flex gap-2 text-xl justify-center items-center">
                         <input
                           name={item.id}
                           onChange={handleCheckbox}
@@ -124,12 +124,12 @@ function App() {
                           {item.Todo}
                         </div>
                       </div>
-                      <div className="btns space-x-3 mb-4">
+                      <div className="btns space-x-3 md:mb-4 mb-2">
                         <button
                           onClick={(e) => {
                             handleEdit(e, item.id);
                           }}
-                          className="bg-purple-900 px-4 rounded h-7 text-gray-300"
+                          className="bg-purple-900 cursor-pointer px-4 rounded md:h-7 h-6 text-gray-300 transition-all ease-in-out duration-500 hover:scale-90"
                         >
                           <FiEdit />
                         </button>
@@ -137,7 +137,7 @@ function App() {
                           onClick={(e) => {
                             handleDelete(e, item.id);
                           }}
-                          className="bg-purple-900 px-4 rounded h-7 text-gray-300"
+                          className="bg-purple-900 cursor-pointer px-4 rounded md:h-7 h-6 text-gray-300 transition-all ease-in-out duration-500 hover:scale-90 hover:bg-red-500"
                         >
                           <MdDelete />
                         </button>
