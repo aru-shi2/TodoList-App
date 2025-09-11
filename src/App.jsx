@@ -82,7 +82,7 @@ function App() {
             <button
               onClick={handleAdd}
               disabled={Todo.length <= 3}
-              className="bg-purple-900 disabled:opacity-50 w-[81%] rounded-xl text-white md:px-4 md:w-fit md:h-9 transition-all ease-in-out duration-500 hover:scale-90"
+              className="bg-purple-900 disabled:opacity-50 w-[81%] rounded-xl text-white md:px-4 md:w-fit md:h-9 h-9 transition-all ease-in-out duration-500 hover:scale-90"
             >
               Add
             </button>
