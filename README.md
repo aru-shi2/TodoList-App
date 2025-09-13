@@ -32,13 +32,16 @@ Taskly is a minimal and efficient ToDo List app built with React and Tailwind CS
 
  - When unchecked: displays only incomplete tasks.
 
+  🛠️ Built With
+
+-Reactjs
+
+-TailwindCSS
+
+
 📦 Getting Started
 
-git clone https://github.com/yourusername/taskly.git
+```git clone https://github.com/aru-shi2/taskly.git
 cd taskly
 npm install
 npm start
-
-🛠️ Built With
-
-React
