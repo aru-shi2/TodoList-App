@@ -1,12 +1,44 @@
-# React + Vite
+📝 Taskly – React + Tailwind ToDo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Taskly is a minimal and efficient ToDo List app built with React and Tailwind CSS, designed to help you stay organized.
 
-Currently, two official plugins are available:
+🔗 Live Demo: https://tasklyy-app.netlify.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🚀 Features
 
-## Expanding the ESLint configuration
+  ✍️ Add Task
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+  - Input field with validation.
+
+  - "Add" button is disabled until the input has 3+ characters.
+
+  ✅ Task Actions
+
+  Each task includes:
+
+  - A checkbox to mark as complete.
+
+  - An edit button to update the task.
+
+  - A delete button to remove it.
+
+  - Completed tasks have a strikethrough style.
+
+  👁️ Show Finished Toggle
+
+  Show Finished checkbox:
+
+ - When checked: displays all tasks.
+
+ - When unchecked: displays only incomplete tasks.
+
+📦 Getting Started
+
+git clone https://github.com/yourusername/taskly.git
+cd taskly
+npm install
+npm start
+
+🛠️ Built With
+
+React
