@@ -75,7 +75,7 @@ function App() {
             <input
               onChange={handleChange}
               value={Todo}
-              className="bg-gray-700 w-[81%] h-10 rounded-xl placeholder-gray-400 p-5 flex"
+              className="bg-gray-700 text-white w-[81%] h-10 rounded-xl placeholder-gray-400 p-5 flex"
               type="text"
               placeholder="Add a new todo.."
             />
